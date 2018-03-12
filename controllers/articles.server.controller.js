@@ -21,6 +21,15 @@ module.exports.listView = function(req, res){
 	});
     }
 });
+};
+
+module.exports.singleView = function(req, res){
+  	res.render('./../public/views/article/view.ejs', {
+		user: req.user || null,
+		request: req
+	});
+};
+
 
 module.exports.list = function(req, res) {
   Article.find(function(err, data) {
